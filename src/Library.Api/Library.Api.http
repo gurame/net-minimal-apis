@@ -1,0 +1,41 @@
+@Api_HostAddress = http://localhost:5250
+@isbn = 9783161484100
+
+### List of Books
+GET {{Api_HostAddress}}/books
+Accept: application/json
+
+### Add a Book
+POST  {{Api_HostAddress}}/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "isbn": "{{isbn}}",
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "shortDescription": "The Great Gatsby is a novel by American author F. Scott Fitzgerald.",
+  "pageCount": 218,
+  "releaseDate": "1925-04-10T00:00:00"
+}
+
+### Get a Book
+GET {{Api_HostAddress}}/books/{{isbn}}
+Accept: application/json
+
+### Update a Book
+PUT  {{Api_HostAddress}}/books/{{isbn}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "isbn": "{{isbn}}",
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "shortDescription": "The Great Gatsby is a novel by American author F. Scott Fitzgerald.",
+  "pageCount": 400,
+  "releaseDate": "1925-04-10T00:00:00"
+}
+
+### Delete a Book
+DELETE  {{Api_HostAddress}}/books/{{isbn}}
